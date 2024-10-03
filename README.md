@@ -23,7 +23,6 @@ United Kingdom.
 ![model](https://github.com/user-attachments/assets/6eb4ef31-57c4-4e89-954d-6b30342f1f03)
 
 ### 1.courses.csv
-
 The file contains the list of all available modules and their presentations. The columns are:
 - code_module - code name of the module, which serves as the identifier.
 - code_presentation - code name of the presentation. It consists of the year and "B" for the presentation starting in February and "J" for the presentation starting in October.
@@ -32,7 +31,6 @@ The file contains the list of all available modules and their presentations. The
 The structure of B and J presentations may differ and therefore it is good practice to analyse the B and J presentations separately. Nevertheless, for some presentations the corresponding previous B/J presentation do not exist and therefore the J presentation must be used to inform the B presentation or vice versa. In the dataset this is the case of CCC, EEE and GGG modules.
 
 ### 2.assessments.csv
-
 This file contains information about assessments in module-presentations. Usually, every presentation has a number of assessments followed by the final exam. CSV contains columns:
 
 - code_module - identification code of the module, to which the assessment belongs.
@@ -44,7 +42,6 @@ This file contains information about assessments in module-presentations. Usuall
 If the information about the final exam date is missing, it is at the end of the last presentation week.
 
 ### 3.vle.csv
-
 The csv file contains information about the available materials in the VLE. Typically, these are html pages, pdf files, etc. Students have access to these materials online and their interactions with the materials are recorded.
 The vle.csv file contains the following columns:
 
@@ -56,7 +53,6 @@ The vle.csv file contains the following columns:
 - week_to - week until which the material is planned to be used.
 
 ### 4.studentInfo.csv
-
 This file contains demographic information about the students together with their results. File contains the following columns:
 
 - code_module - an identification code for a module on which the student is registered.
@@ -73,7 +69,6 @@ This file contains demographic information about the students together with thei
 - final_result - student's final result in the module-presentation.
 
 ### 5.studentRegistration.csv
-
 This file contains information about the time when the student registered for the module presentation. For students who unregistered the date of unregistration is also recorded. File contains five columns:
 
 - code_module - an identification code for a module.
@@ -83,7 +78,6 @@ This file contains information about the time when the student registered for th
 - date_unregistration - date of student unregistration from the module presentation, this is the number of days measured relative to the start of the module-presentation. Students, who completed the course have this field empty. Students who unregistered have Withdrawal as the value of the final_result column in the studentInfo.csv file.
 
 ### 6.studentAssessment.csv
-
 This file contains the results of students' assessments. If the student does not submit the assessment, no result is recorded. The final exam submissions is missing, if the result of the assessments is not stored in the system.
 This file contains the following columns:
 
@@ -94,7 +88,6 @@ This file contains the following columns:
 - score - the student's score in this assessment. The range is from 0 to 100. The score lower than 40 is interpreted as Fail. The marks are in the range from 0 to 100.
 
 ### 7.studentVle.csv
-
 The studentVle.csv file contains information about each student's interactions with the materials in the VLE.
 This file contains the following columns:
 
@@ -126,9 +119,27 @@ Open Data Mashup 2015
 - [Example subset of OULAD](https://analyse.kmi.open.ac.uk/resources/documents/mashupData.RData)
 
 
-## MEHTODS FOR DATA COLLECTION
+## METHODOLOGICAL INFORMATION
 ![41597_2017_Article_BFsdata2017171_Fig3_HTML](https://github.com/user-attachments/assets/5f7c319a-6890-4347-9878-48a390353251)
+### 1.Distinguish different data types
+- Demographic-represents the basic information about the students including their age, gender, region, previous education, etc.
+- Performance-reflects students' results and achievements during their studies at the OU.
+- Learning behaviour-is the log of student activities in the VLE.
+
+### 2.Data selection
+The data warehouse contains information about students, namely: their demographics, modules and VLE activities, since 2012. We selected several representative modules taught at the OU during 2013 and 2014. The selection process followed these rules:
+
+- The number of students in the selected module-presentation is larger than 500.
+- At least two presentations of the module exist.
+- VLE data are available for the module-presentation (since not all the modules are studied via VLE).
+- The module has a significant number of failing students.
+
+Out of the all modules that satisfy these criteria we selected 7 modules: 4 Science, Technology, Engineering, and Mathematics (STEM) modules and 3 Social Sciences modules. The total number of students in the selected modules is 38.239.
+
+### 3.Data anonymisation
+The dataset anonymisation process was designed according to the ethical and privacy requirements applied at the OU. The whole process of dataset creation and release was supervised by the OU management, and approved by the Vice-Chancellor Executive committee. Anonymisation itself was performed in a series of steps. The first step removed private information about students and modules. This includes the social security number, dates of birth and unique identifiers used at the OU for students. Module names have been replaced by semantic-free symbols and all temporal information has been expressed in relative terms with respect to the presentation start. In addition, all numeric identifiers (i.e., student _id, code_module, etc.) have been reassigned and completely randomised.
 
 
 ## DATA-SPECIFIC INFORMATION
-<img width="769" alt="截屏2024-10-03 03 47 26" src="https://github.com/user-attachments/assets/456fe0c4-7ced-48f4-9d31-3d262239d6d7">
+The dataset contains the information about 22 courses, 32,593 students, their assessment results, and logs of their interactions with the VLE represented by daily summaries of student clicks (10,655,280 entries).
+
