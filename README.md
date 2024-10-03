@@ -125,4 +125,10 @@ Open Data Mashup 2015
 - [Document describing a Mashup example](https://analyse.kmi.open.ac.uk/resources/documents/mashupExample.pdf)
 - [Example subset of OULAD](https://analyse.kmi.open.ac.uk/resources/documents/mashupData.RData)
 
-  
+
+## MEHTODS FOR DATA COLLECTION
+![41597_2017_Article_BFsdata2017171_Fig3_HTML](https://github.com/user-attachments/assets/5f7c319a-6890-4347-9878-48a390353251)
+
+
+## DATA-SPECIFIC INFORMATION
+
