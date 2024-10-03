@@ -213,10 +213,10 @@ The studentVle table contains information about student’s interactions with th
 ### 7.Table vle
 The vle table contains information about the materials available in the VLE. Typically these are HTML pages, pdf files, etc. It consists of 6,364 rows with the following columns:
 
-id_site—the identification number of the material.
-code_module—the identification code for the module.
-code_presentation—the identification code of the presentation.
-activity_type—the role associated with the module material.
-week_from—the week from which the material is planned to be used.
-week_to—the week until which the material is planned to be used.
+- id_site—the identification number of the material.
+- code_module—the identification code for the module.
+- code_presentation—the identification code of the presentation.
+- activity_type—the role associated with the module material.
+- week_from—the week from which the material is planned to be used.
+- week_to—the week until which the material is planned to be used.
 
